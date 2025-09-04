@@ -81,11 +81,19 @@ vercel --prod
 
 ## Project Structure
 
-- `/api` - Serverless functions for Vercel deployment
-- `/src` - Main application code
-  - `app.js` - Express application setup
-  - `middleware/` - Express middleware
-  - `routes/` - API routes
+```
+express-javascript/
+├── api/
+│   └── index.ts          # Vercel serverless function entry point (do not modify)
+├── src/
+│   ├── app.js            # Express application setup
+│   ├── middleware/       # Express middleware functions
+│   └── routes/           # API route definitions
+├── package.json          # Project dependencies and scripts
+├── package-lock.json     # Lock file for consistent installations
+├── README.md             # Project documentation
+└── vercel.json           # Vercel deployment configuration
+```
 
 ## Important Notes
 
@@ -134,17 +142,12 @@ Remember not to commit your `.env` file to version control. Add it to your `.git
 
    - If port 3000 is already in use, change the port in `src/app.js`
 
-2. **Deployment fails with TypeScript errors**:
-
-   - This template uses a .ts file for the Vercel serverless function but doesn't require TypeScript configuration for JavaScript development
-   - Focus on writing your code in the `src` directory using JavaScript
-
-3. **Environment variables not working**:
+2. **Environment variables not working**:
 
    - For local development: ensure your `.env` file is in the root directory
    - For Vercel deployment: check if you've added the environment variables in the Vercel dashboard
 
-4. **API routes not working**:
+3. **API routes not working**:
    - Verify your `vercel.json` file is correctly set up
    - Check that your routes are properly defined in your Express application
 
