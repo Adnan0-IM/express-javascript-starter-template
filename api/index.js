@@ -1,5 +1,5 @@
 // api/index.js for vercel only dont edit it
-import app from "../src/app";
+import app from "../src/app.js";
 
 export default app
 
